@@ -4,23 +4,30 @@ CLI tool to fetch the latest news and updates from [Old School RuneScape](https:
 
 ## Installation
 
-Clone the repo and either use the pre-built binary directly or build from source:
+Clone the repo, install the binary to your `$PATH`, and run it from anywhere:
 
 ```bash
 git clone git@github.com:Blizzard-fs/osrs-news.git
 cd osrs-news
 
-# Use pre-built binary (Linux x86_64)
-./osrs-news
-
-# Or build from source (requires Go)
-go build -o osrs-news .
+# Install pre-built binary (Linux x86_64) — run osrs-news from anywhere
+cp osrs-news ~/.local/bin/
 ```
 
-Optionally move the binary somewhere on your `$PATH`:
+> `~/.local/bin` is on `$PATH` by default on most Linux distros. If `osrs-news` still isn't found after copying, add this to your `~/.bashrc` or `~/.zshrc` and restart your terminal:
+> ```bash
+> export PATH="$HOME/.local/bin:$PATH"
+> ```
+
+### Build from source
+
+Requires [Go](https://go.dev/dl/).
 
 ```bash
-mv osrs-news ~/.local/bin/
+git clone git@github.com:Blizzard-fs/osrs-news.git
+cd osrs-news
+go build -o osrs-news .
+cp osrs-news ~/.local/bin/
 ```
 
 ## Usage
