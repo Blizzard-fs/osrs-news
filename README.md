@@ -4,20 +4,41 @@ CLI tool to fetch the latest news and updates from [Old School RuneScape](https:
 
 ## Installation
 
-Clone the repo, install the binary to your `$PATH`, and run it from anywhere:
+Download the binary for your platform from the [releases page](https://github.com/Blizzard-fs/osrs-news/releases/latest), then follow the steps below.
+
+### Linux
 
 ```bash
-git clone git@github.com:Blizzard-fs/osrs-news.git
-cd osrs-news
-
-# Install pre-built binary (Linux x86_64) — run osrs-news from anywhere
-cp osrs-news ~/.local/bin/
+cp osrs-news-linux-amd64 ~/.local/bin/osrs-news
+chmod +x ~/.local/bin/osrs-news
 ```
 
-> `~/.local/bin` is on `$PATH` by default on most Linux distros. If `osrs-news` still isn't found after copying, add this to your `~/.bashrc` or `~/.zshrc` and restart your terminal:
+> `~/.local/bin` is on `$PATH` by default on most Linux distros. If `osrs-news` still isn't found, add this to your `~/.bashrc` or `~/.zshrc` and restart your terminal:
 > ```bash
 > export PATH="$HOME/.local/bin:$PATH"
 > ```
+
+### macOS
+
+```bash
+# Intel
+cp osrs-news-mac-amd64 /usr/local/bin/osrs-news
+
+# Apple Silicon (M1/M2/M3)
+cp osrs-news-mac-arm64 /usr/local/bin/osrs-news
+
+chmod +x /usr/local/bin/osrs-news
+```
+
+> **Gatekeeper warning:** macOS may block the binary on first run since it isn't signed. To fix this, run once:
+> ```bash
+> xattr -d com.apple.quarantine /usr/local/bin/osrs-news
+> ```
+> Alternatively, right-click the file in Finder → Open → Open.
+
+### Windows
+
+Rename `osrs-news-windows-amd64.exe` to `osrs-news.exe` and move it to a folder on your `PATH`, for example `C:\Windows\System32\` or a custom folder you've added to your user `PATH` in System Settings.
 
 ### Build from source
 
