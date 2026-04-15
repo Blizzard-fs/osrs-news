@@ -61,7 +61,8 @@ osrs-news [flags]
 |------|---------|-------------|
 | `-n <count>` | `5` | Number of articles to show. Use `0` for all. |
 | `-c <category>` | _(all)_ | Filter by category: `Game Updates`, `Community`, or `Technical`. |
-| `-full` | off | Show article description below each result. |
+| `-read <N>` | off | Fetch and display the full content of article N in the list. |
+| `-full` | off | Show short description below each result in the list. |
 | `-open` | off | Open the newest matching article in your browser. |
 | `-no-color` | off | Disable ANSI colors (useful for piping or logging). |
 
@@ -95,6 +96,16 @@ osrs-news -open
 Open the latest Game Update in your browser:
 ```bash
 osrs-news -c "Game Updates" -open
+```
+
+Read the full content of article 1 in your terminal:
+```bash
+osrs-news -read 1
+```
+
+Read the latest Game Update in full:
+```bash
+osrs-news -c "Game Updates" -read 1
 ```
 
 Plain output (no colors):
